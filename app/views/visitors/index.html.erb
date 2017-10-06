@@ -1,27 +1,8 @@
 <!-- Header -->
 <header id="top" class="header">
     <div class="text-vertical-center">
-        <h1>Start Bootstrap</h1>
-        <h3>Free Bootstrap Themes &amp; Templates</h3>
+        <h1>Camp Registration Page</h1>
+        <h3>Sign in here to register for camp!</h3>
         <%= button_to 'Sign in', new_user_session_path, class: 'btn btn-primary' %>
     </div>
 </header>
-
-<script>
-// Scrolls to the selected menu item on the page
-$(function() {
-    $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                $('html,body').animate({
-                    scrollTop: target.offset().top
-                }, 1000);
-                return false;
-            }
-        }
-    });
-});
-</script>
