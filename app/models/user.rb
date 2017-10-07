@@ -3,6 +3,7 @@ class User < ApplicationRecord
   after_initialize :set_default_role, :if => :new_record?
   has_many :applications, dependent: :destroy
   has_many :healths, dependent: :destroy
+  has_many :travels, dependent: :destroy
 
   def last_completed_application
     return false unless applications.present?

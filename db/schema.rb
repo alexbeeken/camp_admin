@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007143607) do
+ActiveRecord::Schema.define(version: 20171007151714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,22 @@ ActiveRecord::Schema.define(version: 20171007143607) do
     t.string "dietary_restrictions"
     t.string "allergies"
     t.string "fitness_level"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "travels", force: :cascade do |t|
+    t.datetime "arrival_time"
+    t.string "arrival_company"
+    t.string "arrival_number"
+    t.string "arrival_from"
+    t.datetime "departure_time"
+    t.string "departure_company"
+    t.string "departure_number"
+    t.string "departure_from"
+    t.string "travelling_with"
+    t.string "other_info"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -78,6 +94,10 @@ ActiveRecord::Schema.define(version: 20171007143607) do
     t.string "instrument_experience"
     t.string "address_state"
     t.string "phone"
+    t.string "ice_1_name"
+    t.string "ice_1_phone"
+    t.string "ice_2_name"
+    t.string "ice_2_phone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
