@@ -1,6 +1,6 @@
 <div class='container dashboard'>
-  <% if current_user.application_completed? %>
-    <p>application is completed!</p>
+  <% if current_user.last_completed_application %>
+    <%= link_to "edit application", edit_application_path(current_user.last_completed_application) %>
   <% else %>
     <%= link_to "start application", new_application_path %>
   <% end %>

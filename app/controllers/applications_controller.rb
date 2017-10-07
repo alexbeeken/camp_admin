@@ -3,8 +3,18 @@ class ApplicationsController < ActionController::Base
     @application = Application.new()
   end
 
+  def edit
+    @application = Application.find(params[:id])
+  end
+
   def create
     @application = Application.create!(secure_params.merge(user: current_user))
+    redirect_to root_path
+  end
+
+  def update
+    @application = Application.find(params[:id])
+    @application.update!(secure_params)
     redirect_to root_path
   end
 

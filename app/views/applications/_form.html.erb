@@ -1,0 +1,197 @@
+
+<div class='form-group'>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :address_1 %>
+  <%= f.text_field :address_1, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :address_2 %>
+  <%= f.text_field :address_2, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :address_city %>
+  <%= f.text_field :address_city, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :address_state %>
+  <%= f.text_field :address_state, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :address_zip %>
+  <%= f.text_field :address_zip, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :address_country %>
+  <%= f.text_field :address_country, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :phone %>
+  <%= f.text_field :phone, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :gender %>
+  <%= f.radio_button(:gender, "male") %>
+  <%= f.label(:male, "male") %>
+  <%= f.radio_button(:gender, "female") %>
+  <%= f.label(:female, "female") %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :parents %>
+  <%= f.text_field :parents, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :birthdate %>
+  <%= f.text_field :birthdate, "data-provide" => 'datepicker', class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :voice_part %>
+  <%= f.radio_button(:voice_part, "soprano") %>
+  <%= f.label(:soprano, "soprano") %>
+  <%= f.radio_button(:voice_part, "alto") %>
+  <%= f.label(:alto, "alto") %>
+  <%= f.radio_button(:voice_part, "tenor") %>
+  <%= f.label(:tenor, "tenor") %>
+  <%= f.radio_button(:voice_part, "bass") %>
+  <%= f.label(:bass, "bass") %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :lowest_note %>
+  <%= f.text_field :lowest_note, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :highest_note %>
+  <%= f.text_field :highest_note, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :ear_learning %>
+  <%= f.text_field :ear_learning, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :read_music %>
+  <%= f.text_field :read_music, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :independent_voice %>
+  <%= f.text_field :independent_voice, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :independent_learning %>
+  <%= f.text_field :independent_learning, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :play_to_you %>
+  <%= f.text_field :play_to_you, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :like_to_move %>
+  <%= f.text_field :like_to_move, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :other_experience %>
+  <%= f.text_field :other_experience, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :author_experience %>
+  <%= f.text_field :author_experience, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :instrument_experience %>
+  <%= f.text_field :instrument_experience, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :dietary_preferences %>
+  <%= f.text_field :dietary_preferences, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :dietary_restrictions %>
+  <%= f.text_field :dietary_restrictions, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :allergies %>
+  <%= f.text_field :allergies, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :fitness_level %>
+  <%= f.text_field :fitness_level, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.check_box(:no_smoking_confirm) %>
+  <%= f.label(:no_smoking_confirm, "I won't smoke") %>
+</div>
+
+<div class='form-group'>
+  <%= f.check_box(:form_confirm) %>
+  <%= f.label(:form_confirm, "I will be good at communicating") %>
+</div>
+
+<div class='form-group'>
+  <%= f.check_box(:tent_confirm) %>
+  <%= f.label(:tent_confirm, "I like tent camping") %>
+</div>
+
+<% if current_user.returning %>
+  <div class='form-group'>
+    <%= f.label :returning_past_years %>
+    <%= f.text_field :returning_past_years, class: 'form-control', required: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :returning_improvement_ideas %>
+    <%= f.text_field :returning_improvement_ideas, class: 'form-control', required: true %>
+  </div>
+<% else %>
+  <div class='form-group'>
+    <%= f.label :new_why %>
+    <%= f.text_field :new_why, class: 'form-control', required: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :new_attitude %>
+    <%= f.text_field :new_attitude, class: 'form-control', required: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :new_inspiration %>
+    <%= f.text_field :new_inspiration, class: 'form-control', required: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :new_other_skills %>
+    <%= f.text_field :new_other_skills, class: 'form-control', required: true %>
+  </div>
+<% end %>

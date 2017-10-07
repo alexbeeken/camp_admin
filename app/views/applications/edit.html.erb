@@ -12,9 +12,9 @@
 <div class='container'>
 
   <%= button_to 'oops take me back', root_path, class: 'btn btn-primary', method: 'get' %>
-  <%= form_for @application do |f| %>
+  <%= form_for @application, url: { action: 'update' } do |f| %>
     <%= render partial: 'form', locals: {f: f} %>
-    <%= f.submit 'Submit Application', class: 'btn btn-primary', required: true %>
+    <%= f.submit 'Update Application', class: 'btn btn-primary', required: true %>
   <% end %>
 
 </div>

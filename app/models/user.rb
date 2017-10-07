@@ -3,9 +3,11 @@ class User < ApplicationRecord
   after_initialize :set_default_role, :if => :new_record?
   has_many :applications, dependent: :destroy
 
-  def application_completed?
+  def last_completed_application
     return false unless applications.present?
-    applications.last.created_at > 1.year.ago
+    last_app = applications.last
+    return last_app if last_app.created_at > 1.year.ago
+    false
   end
 
   def set_default_role
