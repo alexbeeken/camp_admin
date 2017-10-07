@@ -12,15 +12,16 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap-datepicker3
  */
 
  .dashboard {
-   margin-top: 5vw;
+   margin-top: 80px;
    float: left;
  }
 
  .alert {
    float: left;
    width: 100%;
-   margin-top: 5vw;
+   margin-top: 80px;
  }
