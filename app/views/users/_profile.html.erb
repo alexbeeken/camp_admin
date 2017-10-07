@@ -1,0 +1,124 @@
+<div class='form-group'>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :address_1 %>
+  <%= f.text_field :address_1, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :address_2 %>
+  <%= f.text_field :address_2, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :address_city %>
+  <%= f.text_field :address_city, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :address_state %>
+  <%= f.text_field :address_state, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :address_zip %>
+  <%= f.text_field :address_zip, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :address_country %>
+  <%= f.text_field :address_country, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :phone %>
+  <%= f.text_field :phone, class: 'form-control', required: true  %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :gender %>
+  <%= f.radio_button(:gender, "male") %>
+  <%= f.label(:male, "male") %>
+  <%= f.radio_button(:gender, "female") %>
+  <%= f.label(:female, "female") %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :parents %>
+  <%= f.text_field :parents, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :birthdate %>
+  <%= f.text_field :birthdate, "data-provide" => 'datepicker', class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :voice_part %>
+  <%= f.radio_button(:voice_part, "soprano") %>
+  <%= f.label(:soprano, "soprano") %>
+  <%= f.radio_button(:voice_part, "alto") %>
+  <%= f.label(:alto, "alto") %>
+  <%= f.radio_button(:voice_part, "tenor") %>
+  <%= f.label(:tenor, "tenor") %>
+  <%= f.radio_button(:voice_part, "bass") %>
+  <%= f.label(:bass, "bass") %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :lowest_note %>
+  <%= f.text_field :lowest_note, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :highest_note %>
+  <%= f.text_field :highest_note, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :ear_learning %>
+  <%= f.text_field :ear_learning, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :read_music %>
+  <%= f.text_field :read_music, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :independent_voice %>
+  <%= f.text_field :independent_voice, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :independent_learning %>
+  <%= f.text_field :independent_learning, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :play_to_you %>
+  <%= f.text_field :play_to_you, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :like_to_move %>
+  <%= f.text_field :like_to_move, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :other_experience %>
+  <%= f.text_field :other_experience, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :author_experience %>
+  <%= f.text_field :author_experience, class: 'form-control', required: true %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :instrument_experience %>
+  <%= f.text_field :instrument_experience, class: 'form-control', required: true %>
+</div>

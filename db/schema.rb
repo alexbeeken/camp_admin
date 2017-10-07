@@ -10,37 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007015154) do
+ActiveRecord::Schema.define(version: 20171007141024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "applications", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.string "address_1"
-    t.string "address_2"
-    t.string "address_city"
-    t.string "address_state"
-    t.string "address_zip"
-    t.string "address_country"
-    t.string "phone"
-    t.string "gender"
-    t.string "parents"
-    t.date "birthdate"
-    t.string "voice_part"
-    t.string "lowest_note"
-    t.string "highest_note"
-    t.integer "ear_learning"
-    t.integer "read_music"
-    t.integer "independent_voice"
-    t.integer "independent_learning"
-    t.boolean "play_to_you"
-    t.boolean "like_to_move"
-    t.string "other_experience"
-    t.string "author_experience"
-    t.string "instrument_experience"
     t.string "dietary_preferences"
     t.string "dietary_restrictions"
     t.string "allergies"
@@ -75,6 +50,28 @@ ActiveRecord::Schema.define(version: 20171007015154) do
     t.string "name"
     t.integer "role"
     t.boolean "returning", default: false
+    t.string "address_1"
+    t.string "address_2"
+    t.string "address_city"
+    t.string "address_country"
+    t.string "address_zip"
+    t.string "gender"
+    t.string "parents"
+    t.date "birthdate"
+    t.string "voice_part"
+    t.string "lowest_note"
+    t.string "highest_note"
+    t.string "ear_learning"
+    t.string "read_music"
+    t.string "independent_voice"
+    t.string "independent_learning"
+    t.string "play_to_you"
+    t.string "like_to_move"
+    t.string "other_experience"
+    t.string "author_experience"
+    t.string "instrument_experience"
+    t.string "address_state"
+    t.string "phone"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
