@@ -1,3 +1,7 @@
 
-<p>application is completed!</p>
-<%= link_to "start application", new_application_path %>
+<p>template loaded</p>
+<% if current_user.application_completed? %>
+  <p>application is completed!</p>
+<% else %>
+  <%= link_to "start application", new_application_path %>
+<% end %>
