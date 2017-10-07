@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(secure_params)
@@ -32,8 +36,12 @@ class UsersController < ApplicationController
 
   private
 
+  def current_user_only
+    params[:id].to_i == current_user.id
+  end
+
   def admin_only
-    unless current_user.admin?
+    unless current_user.admin? || current_user_only
       redirect_to root_path, :alert => "Access denied."
     end
   end

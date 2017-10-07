@@ -2,6 +2,16 @@
   <% if current_user.last_completed_application %>
     <%= link_to "edit application", edit_application_path(current_user.last_completed_application) %>
   <% else %>
-    <%= link_to "start application", new_application_path %>
+    <%= link_to "apply for camp!", new_application_path %>
+  <% end %>
+
+  <% if current_user.last_health_form %>
+    <%= link_to "edit health information", edit_health_path(current_user.last_health_form) %>
+  <% else %>
+    <%= link_to "fill out health information", new_health_path %>
+  <% end %>
+
+  <% if current_user.profile_needs_updating %>
+    <%= link_to "verify profile informtion", edit_user_path(current_user) %>
   <% end %>
 </div>

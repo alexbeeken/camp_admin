@@ -10,16 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171007141024) do
+ActiveRecord::Schema.define(version: 20171007143607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "applications", force: :cascade do |t|
-    t.string "dietary_preferences"
-    t.string "dietary_restrictions"
-    t.string "allergies"
-    t.string "fitness_level"
     t.boolean "no_smoking_confirm"
     t.boolean "form_confirm"
     t.boolean "tent_confirm"
@@ -29,6 +25,16 @@ ActiveRecord::Schema.define(version: 20171007141024) do
     t.string "new_attitude"
     t.string "new_inspiration"
     t.string "new_other_skills"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "healths", force: :cascade do |t|
+    t.string "dietary_preferences"
+    t.string "dietary_restrictions"
+    t.string "allergies"
+    t.string "fitness_level"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
