@@ -1,18 +1,1 @@
-# TODO
 
-- make contact info part of application actually part of user model
-- make the application part just the things that have to do with camp
-
-- list of things for returning campers to do:
-  - pay deposit (no other options show up)
-  (when deposit is paid)
-  - verify/update contact information (pre-populated from existing data)
-  - fill out returning camper information
-  - fill out other forms yada yada
-
-- list of things for new/applying campers to do:
-  - fill out application
-  - once application is submitted application status will be displayed
-  - if accepted:
-    - pay camp deposit will be only option shown
-    - if paid, then show all other forms
