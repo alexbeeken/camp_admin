@@ -1,0 +1,5 @@
+<% if current_user.application_completed? %>
+  <p>application is completed!</p>
+<% else %>
+  <%= link_to "start application", new_application_path %>
+<% end %>

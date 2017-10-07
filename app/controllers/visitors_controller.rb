@@ -1,9 +1,8 @@
 class VisitorsController < ApplicationController
-  before_action :authenticate_user!, only: :dashboard
 
-  def index
-    if current_user
-      redirect_to dashboard_path
+  def dashboard
+    unless user_signed_in?
+      redirect_to index_path and return
     end
   end
 end
