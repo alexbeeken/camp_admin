@@ -1,0 +1,16 @@
+<div class='form-group'>
+  <p>
+    I hereby give all my rights and responsibilties to Ooolation.
+    In the event of a lawsuit they will not be liable for anything.
+  </p>
+</div>
+
+<div class='form-group'>
+  <%= f.check_box(:behavior_agreement) %>
+  <%= f.label(:behavior_agreement, "I will behave myself") %>
+</div>
+
+<div class='form-group'>
+  <%= f.label :waiver_signature %>
+  <%= f.text_field :waiver_signature, class: 'form-control', required: true %>
+</div>

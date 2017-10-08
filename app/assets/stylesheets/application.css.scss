@@ -22,6 +22,14 @@
    flex-direction: column;
  }
 
+ .dashboard-item {
+   margin: 10px;
+ }
+
+ .glyphicon-ok {
+   color: green;
+ }
+
  .alert {
    float: left;
    width: 100%;

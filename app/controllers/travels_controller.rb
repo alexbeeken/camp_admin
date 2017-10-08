@@ -21,7 +21,7 @@ class TravelsController < ActionController::Base
   private
 
   def secure_params
-    params.require(:health).permit(
+    params.require(:travel).permit(
       :arrival_time,
       :arrival_company,
       :arrival_number,

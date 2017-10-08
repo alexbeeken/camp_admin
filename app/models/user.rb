@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :applications, dependent: :destroy
   has_many :healths, dependent: :destroy
   has_many :travels, dependent: :destroy
+  has_many :legals, dependent: :destroy
 
   def last_completed_application
     return false unless applications.present?
@@ -23,6 +24,13 @@ class User < ApplicationRecord
     return false unless travels.present?
     last_travel = travels.last
     return last_travel if last_travel.created_at > 1.year.ago
+    false
+  end
+
+  def last_legal_form
+    return false unless legals.present?
+    last_legal = legals.last
+    return last_legal if last_legal.created_at > 1.year.ago
     false
   end
 

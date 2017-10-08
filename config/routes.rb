@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :applications
   resources :healths
   resources :travels
+  resources :legals
 
   get '/dashboard', to: 'visitors#dashboard'
   get '/index', to: 'visitors#index'

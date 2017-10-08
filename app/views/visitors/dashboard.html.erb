@@ -1,4 +1,6 @@
 <div class='container dashboard'>
+  <h3>Forms</h3>
+
   <div class='dashboard-item'>
     <% if current_user.last_completed_application %>
       <%= link_to "edit application", edit_application_path(current_user.last_completed_application) %>
@@ -32,6 +34,15 @@
       <icon class='glyphicon glyphicon-ok'></icon>
     <% else %>
       <%= link_to "travel form", new_travel_path %>
+    <% end %>
+  </div>
+
+  <div class='dashboard-item'>
+    <% if current_user.last_legal_form %>
+      <%= link_to "edit legal information", edit_legal_path(current_user.last_legal_form) %>
+      <icon class='glyphicon glyphicon-ok'></icon>
+    <% else %>
+      <%= link_to "legal form", new_legal_path %>
     <% end %>
   </div>
 </div>
