@@ -1,17 +1,37 @@
 <div class='container dashboard'>
-  <% if current_user.last_completed_application %>
-    <%= link_to "edit application", edit_application_path(current_user.last_completed_application) %>
-  <% else %>
-    <%= link_to "apply for camp!", new_application_path %>
-  <% end %>
+  <div class='dashboard-item'>
+    <% if current_user.last_completed_application %>
+      <%= link_to "edit application", edit_application_path(current_user.last_completed_application) %>
+      <icon class='glyphicon glyphicon-ok'></icon>
+    <% else %>
+      <%= link_to "apply!", new_application_path %>
+    <% end %>
+  </div>
 
-  <% if current_user.last_health_form %>
-    <%= link_to "edit health information", edit_health_path(current_user.last_health_form) %>
-  <% else %>
-    <%= link_to "fill out health information", new_health_path %>
-  <% end %>
+  <div class='dashboard-item'>
+    <% if current_user.last_health_form %>
+      <%= link_to "edit health information", edit_health_path(current_user.last_health_form) %>
+      <icon class='glyphicon glyphicon-ok'></icon>
+    <% else %>
+      <%= link_to "health form", new_health_path %>
+    <% end %>
+  </div>
 
-  <% if current_user.profile_needs_updating %>
-    <%= link_to "verify profile informtion", edit_user_path(current_user) %>
-  <% end %>
+  <div class='dashboard-item'>
+    <% if current_user.profile_needs_updating %>
+      <%= link_to "verify profile", edit_user_path(current_user) %>
+    <% else %>
+      <%= link_to "verify profile", edit_user_path(current_user) %>
+      <icon class='glyphicon glyphicon-ok'></icon>
+    <% end %>
+  </div>
+
+  <div class='dashboard-item'>
+    <% if current_user.last_travel_form %>
+      <%= link_to "edit travel information", edit_travel_path(current_user.last_travel_form) %>
+      <icon class='glyphicon glyphicon-ok'></icon>
+    <% else %>
+      <%= link_to "travel form", new_travel_path %>
+    <% end %>
+  </div>
 </div>

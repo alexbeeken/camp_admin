@@ -1,0 +1,58 @@
+<div class='form-group'>
+  <h1>Arrival</h1>
+  <div class='form-group'>
+    <%= f.label :arrival_time %>
+    <%= f.datetime_field :arrival_time, class: 'form-control', required: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :arrival_company %>
+    <%= f.text_field :arrival_company, class: 'form-control', required: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :arrival_number %>
+    <%= f.text_field :arrival_number, class: 'form-control', required: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :arrival_from, 'Company (airline/train/bus)' %>
+    <%= f.text_field :arrival_from, class: 'form-control', required: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :travelling_with %>
+    <%= f.text_field :travelling_with, class: 'form-control', required: true %>
+  </div>
+</div>
+
+<div class='form-group'>
+  <h1>Departure</h1>
+  <div class='form-group'>
+    <%= f.label :departure_time %>
+    <%= f.datetime_field :departure_time, class: 'form-control', required: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :departure_company %>
+    <%= f.text_field :departure_company, class: 'form-control', required: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :departure_number %>
+    <%= f.text_field :departure_number, class: 'form-control', required: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :departure_from %>
+    <%= f.text_field :departure_from, class: 'form-control', required: true %>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class='form-group'>
+  <%= f.label :other_info %>
+  <%= f.text_field :other_info, class: 'form-control', required: true %>
+</div>

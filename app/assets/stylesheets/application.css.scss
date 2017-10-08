@@ -18,6 +18,8 @@
  .dashboard {
    margin-top: 80px;
    float: left;
+   display: flex;
+   flex-direction: column;
  }
 
  .alert {

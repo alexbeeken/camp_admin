@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :applications
   resources :healths
+  resources :travels
 
   get '/dashboard', to: 'visitors#dashboard'
   get '/index', to: 'visitors#index'

@@ -19,6 +19,13 @@ class User < ApplicationRecord
     false
   end
 
+  def last_travel_form
+    return false unless travels.present?
+    last_travel = travels.last
+    return last_travel if last_travel.created_at > 1.year.ago
+    false
+  end
+
   def profile_needs_updating
     updated_at > 1.year.ago
   end
