@@ -1,5 +1,6 @@
 TODOs
 
+- dry up templates like crazy!
 - create form for travel info
 - create model/form for payment
 - make edit, delete, create actions secure on new models
