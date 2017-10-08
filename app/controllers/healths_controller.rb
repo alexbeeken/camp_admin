@@ -25,7 +25,13 @@ class HealthsController < ActionController::Base
        :dietary_preferences,
        :dietary_restrictions,
        :allergies,
-       :fitness_level
+       :fitness_level,
+       :medical_history,
+       :injuries,
+       :tetanus_booster,
+       :insurance_provider,
+       :plan_number,
+       :responsible_party
     )
   end
 end
