@@ -1,4 +1,5 @@
-class ApplicationsController < ActionController::Base
+class ApplicationsController < FormsController
+
   def new
     @application = Application.new()
   end
@@ -19,6 +20,10 @@ class ApplicationsController < ActionController::Base
   end
 
   private
+
+  def current_user_only
+    Application.find(params[:id]).user_id == current_user.id
+  end
 
   def secure_params
     params.require(:application).permit(

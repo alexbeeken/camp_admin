@@ -1,4 +1,5 @@
-class TravelsController < ActionController::Base
+class TravelsController < FormsController
+
   def new
     @travel = Travel.new()
   end
@@ -19,6 +20,10 @@ class TravelsController < ActionController::Base
   end
 
   private
+
+  def current_user_only
+    Travel.find(params[:id]).user_id == current_user.id
+  end
 
   def secure_params
     params.require(:travel).permit(

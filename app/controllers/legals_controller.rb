@@ -1,4 +1,5 @@
-class LegalsController < ActionController::Base
+class LegalsController < FormsController
+
   def new
     @legal = Legal.new()
   end
@@ -19,6 +20,10 @@ class LegalsController < ActionController::Base
   end
 
   private
+
+  def current_user_only
+    Legal.find(params[:id]).user_id == current_user.id
+  end
 
   def secure_params
     params.require(:legal).permit(

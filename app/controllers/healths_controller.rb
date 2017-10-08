@@ -1,4 +1,5 @@
-class HealthsController < ActionController::Base
+class HealthsController < FormsController
+
   def new
     @health = Health.new()
   end
@@ -19,6 +20,10 @@ class HealthsController < ActionController::Base
   end
 
   private
+
+  def current_user_only
+    Health.find(params[:id]).user_id == current_user.id
+  end
 
   def secure_params
     params.require(:health).permit(
