@@ -10,11 +10,11 @@
   <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 </head>
 <div class='container'>
-
-  <%= button_to 'oops take me back', root_path, class: 'btn btn-primary', method: 'get' %>
-  <%= form_for @user, url: { action: 'update' } do |f| %>
-    <%= render partial: 'profile', locals: {f: f} %>
-    <%= f.submit 'Update and Confirm', class: 'btn btn-primary', required: true %>
-  <% end %>
-
+  <div class='form'>
+    <%= button_to 'oops take me back', root_path, class: 'btn btn-primary', method: 'get' %>
+    <%= form_for @user, url: { action: 'update' } do |f| %>
+      <%= render partial: 'profile', locals: {f: f} %>
+      <%= f.submit 'Update and Confirm', class: 'btn btn-primary', required: true %>
+    <% end %>
+  </div>
 </div>
