@@ -1,49 +1,10 @@
-<div class='form-group'>
-  <%= f.label :dietary_preferences %>
-  <%= f.text_field :dietary_preferences, class: 'form-control' %>
-</div>
-
-<div class='form-group'>
-  <%= f.label :dietary_restrictions %>
-  <%= f.text_field :dietary_restrictions, class: 'form-control' %>
-</div>
-
-<div class='form-group'>
-  <%= f.label :allergies %>
-  <%= f.text_field :allergies, class: 'form-control' %>
-</div>
-
-<div class='form-group'>
-  <%= f.label :fitness_level %>
-  <%= f.text_field :fitness_level, class: 'form-control', required: true %>
-</div>
-
-<div class='form-group'>
-  <%= f.label :medical_history %>
-  <%= f.text_field :medical_history, class: 'form-control' %>
-</div>
-
-<div class='form-group'>
-  <%= f.label :injuries %>
-  <%= f.text_field :injuries, class: 'form-control' %>
-</div>
-
-<div class='form-group'>
-  <%= f.label :tetanus_booster %>
-  <%= f.date_field :tetanus_booster, class: 'form-control', required: true %>
-</div>
-
-<div class='form-group'>
-  <%= f.label :insurance_provider %>
-  <%= f.text_field :insurance_provider, class: 'form-control', required: true %>
-</div>
-
-<div class='form-group'>
-  <%= f.label :plan_number %>
-  <%= f.text_field :plan_number, class: 'form-control', required: true %>
-</div>
-
-<div class='form-group'>
-  <%= f.label :responsible_party %>
-  <%= f.text_field :responsible_party, class: 'form-control', required: true %>
-</div>
+<%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :dietary_preferences} %>
+<%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :dietary_restrictions} %>
+<%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :allergies} %>
+<%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :fitness_level} %>
+<%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :medical_history} %>
+<%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :injuries} %>
+<%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :tetanus_booster} %>
+<%= render partial: 'layouts/form_fields/date_field', locals: {f: f, field_name: :insurance_provider} %>
+<%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :plan_number} %>
+<%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :responsible_party} %>

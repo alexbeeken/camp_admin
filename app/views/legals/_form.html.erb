@@ -1,16 +1,11 @@
-<div class='form-group'>
-  <p>
-    I hereby give all my rights and responsibilties to Ooolation.
-    In the event of a lawsuit they will not be liable for anything.
-  </p>
-</div>
+<div class='form'>
+  <div class='form-group'>
+    <p>
+      I hereby give all my rights and responsibilties to Ooolation.
+      In the event of a lawsuit they will not be liable for anything.
+    </p>
+  </div>
 
-<div class='form-group'>
-  <%= f.check_box(:behavior_agreement) %>
-  <%= f.label(:behavior_agreement, "I will behave myself") %>
-</div>
-
-<div class='form-group'>
-  <%= f.label :waiver_signature %>
-  <%= f.text_field :waiver_signature, class: 'form-control', required: true %>
+  <%= render partial: 'layouts/form_fields/check_box', locals: {f: f, field_name: :behavior_agreement, text: "I will behave myself."} %>
+  <%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :waiver_signature} %>
 </div>

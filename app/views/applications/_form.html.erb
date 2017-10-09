@@ -1,46 +1,13 @@
-<div class='form-group'>
-  <%= f.check_box(:no_smoking_confirm) %>
-  <%= f.label(:no_smoking_confirm, "I won't smoke") %>
-</div>
-
-<div class='form-group'>
-  <%= f.check_box(:form_confirm) %>
-  <%= f.label(:form_confirm, "I will be good at communicating") %>
-</div>
-
-<div class='form-group'>
-  <%= f.check_box(:tent_confirm) %>
-  <%= f.label(:tent_confirm, "I like tent camping") %>
-</div>
+<%= render partial: 'layouts/form_fields/check_box', locals: {f: f, field_name: :no_smoking_confirm, text: "I won't smoke"} %>
+<%= render partial: 'layouts/form_fields/check_box', locals: {f: f, field_name: :form_confirm, text: "I will be good at communicating"} %>
+<%= render partial: 'layouts/form_fields/check_box', locals: {f: f, field_name: :tent_confirm, text: "I like tent camping"} %>
 
 <% if current_user.returning %>
-  <div class='form-group'>
-    <%= f.label :returning_past_years %>
-    <%= f.text_field :returning_past_years, class: 'form-control', required: true %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :returning_improvement_ideas %>
-    <%= f.text_field :returning_improvement_ideas, class: 'form-control', required: true %>
-  </div>
+  <%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :returning_past_years} %>
+  <%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :returning_improvement_ideas} %>
 <% else %>
-  <div class='form-group'>
-    <%= f.label :new_why %>
-    <%= f.text_field :new_why, class: 'form-control', required: true %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :new_attitude %>
-    <%= f.text_field :new_attitude, class: 'form-control', required: true %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :new_inspiration %>
-    <%= f.text_field :new_inspiration, class: 'form-control', required: true %>
-  </div>
-
-  <div class='form-group'>
-    <%= f.label :new_other_skills %>
-    <%= f.text_field :new_other_skills, class: 'form-control', required: true %>
-  </div>
+  <%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :new_why} %>
+  <%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :new_attitude} %>
+  <%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :new_inspiration} %>
+  <%= render partial: 'layouts/form_fields/text_field', locals: {f: f, field_name: :new_other_skills} %>
 <% end %>
