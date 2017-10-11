@@ -4,19 +4,15 @@ class VisitorsController < ApplicationController
 
   def dashboard
     if current_user.admin?
-      @campers = User.where(role: 'camper', returning: true)
+      @campers = User.where(role: 'camper', accepted: true)
       render 'dashboard_admin'
     else
       render 'dashboard_camper'
     end
   end
 
-  def returning_campers
-    @campers = User.where(role: 'camper', returning: true)
-  end
-
   def new_applications
-    @campers = User.where(role: 'camper', returning: false)
+    @campers = User.where(role: 'camper')
   end
 
   private

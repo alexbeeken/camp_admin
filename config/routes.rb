@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :legals
 
   get '/dashboard', to: 'visitors#dashboard'
-  get '/returning_campers', to: 'visitors#returning_campers'
   get '/new_applications', to: 'visitors#new_applications'
+  get '/deny/:id', to: 'users#deny', as: :deny_user
+  get '/accept/:id', to: 'users#accept', as: :accept_user
+  get '/undo/:id', to: 'users#undo', as: :undo_user
   get '/index', to: 'visitors#index'
 end

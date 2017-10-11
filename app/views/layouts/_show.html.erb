@@ -4,13 +4,15 @@
     <th>response</th>
   </tr>
   <% model.attributes.keys.each do |attribute_name| %>
-    <tr>
-      <td>
-        <%= attribute_name %>
-      </td>
-      <td>
-        <%= model[attribute_name] %>
-      </td>
-    </tr>
+    <% if !['id'].include?(attribute_name) %>
+      <tr>
+        <td>
+          <%= attribute_name %>
+        </td>
+        <td>
+          <%= model[attribute_name] %>
+        </td>
+      </tr>
+    <% end %>
   <% end %>
 </table>

@@ -20,7 +20,7 @@
           profile updated
         </th>
       </tr>
-    <% @campers.each do |camper| %>
+    <% campers.each do |camper| %>
       <tr>
         <td>
           <%= camper.name %>
@@ -29,35 +29,35 @@
           <% if camper.last_completed_application %>
             <%= link_to "completed", application_path(camper.last_completed_application.id) %>
           <% else %>
-            </p> not completed </p>
+            not completed
           <% end %>
         </td>
         <td>
           <% if camper.last_health_form %>
             <%= link_to "completed", health_path(camper.last_health_form.id) %>
           <% else %>
-            </p> not completed </p>
+            not completed
           <% end %>
         </td>
         <td>
           <% if camper.last_travel_form %>
             <%= link_to "completed", travel_path(camper.last_travel_form.id) %>
           <% else %>
-            </p> not completed </p>
+            not completed
           <% end %>
         </td>
         <td>
           <% if camper.last_legal_form %>
             <%= link_to "completed", legal_path(camper.last_legal_form.id) %>
           <% else %>
-            </p> not completed </p>
+            not completed
           <% end %>
         </td>
         <td>
           <% if !camper.profile_needs_updating %>
-            <p>completed</p>
+            complete
           <% else %>
-            </p> not completed </p>
+            not completed
           <% end %>
         </td>
       </tr>

@@ -5,36 +5,37 @@
           name
         </th>
         <th>
-          application
+          returning
         </th>
         <th>
           status
         </th>
       </tr>
     <% @campers.each do |camper| %>
-      <tr>
-        <td>
-          <%= camper.name %>
-        </td>
-        <td>
-          <% if camper.last_completed_application %>
-            <p>completed</p>
-          <% else %>
-            </p>not completed</p>
-          <% end %>
-        </td>
-        <td>
-          <% if camper.accepted.nil? %>
-            <p> (no decision) </p>
-          <% else %>
-            <% if camper.accepted %>
-              </p>accepted</p>
+      <% if camper.last_completed_application %>
+        <tr>
+          <td>
+            <%= camper.name %>
+          </td>
+          <td>
+            <%= camper.returning %>
+          </td>
+          <td>
+            <% if camper.accepted.nil? %>
+              <%= link_to "see application", application_path(camper.last_completed_application.id) %>
             <% else %>
-          </p>denied</p>
+              <% if camper.last_completed_application %>
+                <% if camper.accepted %>
+                  </p>accepted
+                <% else %>
+                  </p>denied
+                <% end %>
+                (<%= link_to 'undo', undo_user_path(camper.id) %>)</p>
+              <% end %>
             <% end %>
-          <% end %>
-        </td>
-      </tr>
+          </td>
+        </tr>
+      <% end %>
     <% end %>
   </table>
 </div>

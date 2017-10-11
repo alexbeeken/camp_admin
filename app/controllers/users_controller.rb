@@ -34,6 +34,24 @@ class UsersController < ApplicationController
     redirect_to users_path, :notice => "User deleted."
   end
 
+  def accept
+    user = User.find(params[:id])
+    user.update!(accepted: true)
+    redirect_to new_applications_path, :notice => "Application accepted."
+  end
+
+  def deny
+    user = User.find(params[:id])
+    user.update!(accepted: false)
+    redirect_to new_applications_path, :notice => "Application accepted."
+  end
+
+  def undo
+    user = User.find(params[:id])
+    user.update!(accepted: nil)
+    redirect_to new_applications_path, :notice => "Application decision undone."
+  end
+
   private
 
   def current_user_only
