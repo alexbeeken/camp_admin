@@ -1,0 +1,19 @@
+<div class='form'>
+  <table class='table table-striped'>
+      <tr>
+        <th>
+          name
+        </th>
+        <th>
+          
+        </th>
+      </tr>
+    <% @campers.each do |camper| %>
+      <tr>
+        <td>
+          <%= camper.name %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
