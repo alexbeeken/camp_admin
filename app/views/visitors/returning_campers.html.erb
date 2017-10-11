@@ -1,17 +1,64 @@
-<div class='form'>
+<div class='camp-roster'>
   <table class='table table-striped'>
       <tr>
         <th>
           name
         </th>
         <th>
-          
+          application
+        </th>
+        <th>
+          health
+        </th>
+        <th>
+          travel
+        </th>
+        <th>
+          legal
+        </th>
+        <th>
+          profile updated
         </th>
       </tr>
     <% @campers.each do |camper| %>
       <tr>
         <td>
           <%= camper.name %>
+        </td>
+        <td>
+          <% if camper.last_completed_application %>
+            <p>completed</p>
+          <% else %>
+            </p> not completed </p>
+          <% end %>
+        </td>
+        <td>
+          <% if camper.last_health_form %>
+            <p>completed</p>
+          <% else %>
+            </p> not completed </p>
+          <% end %>
+        </td>
+        <td>
+          <% if camper.last_travel_form %>
+            <p>completed</p>
+          <% else %>
+            </p> not completed </p>
+          <% end %>
+        </td>
+        <td>
+          <% if camper.last_legal_form %>
+            <p>completed</p>
+          <% else %>
+            </p> not completed </p>
+          <% end %>
+        </td>
+        <td>
+          <% if !camper.profile_needs_updating %>
+            <p>completed</p>
+          <% else %>
+            </p> not completed </p>
+          <% end %>
         </td>
       </tr>
     <% end %>
