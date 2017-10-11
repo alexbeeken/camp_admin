@@ -1,0 +1,16 @@
+<table class='table table-striped'>
+  <tr>
+    <th>name</th>
+    <th>response</th>
+  </tr>
+  <% model.attributes.keys.each do |attribute_name| %>
+    <tr>
+      <td>
+        <%= attribute_name %>
+      </td>
+      <td>
+        <%= model[attribute_name] %>
+      </td>
+    </tr>
+  <% end %>
+</table>

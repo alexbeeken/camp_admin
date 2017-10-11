@@ -27,28 +27,28 @@
         </td>
         <td>
           <% if camper.last_completed_application %>
-            <p>completed</p>
+            <%= link_to "completed", application_path(camper.last_completed_application.id) %>
           <% else %>
             </p> not completed </p>
           <% end %>
         </td>
         <td>
           <% if camper.last_health_form %>
-            <p>completed</p>
+            <%= link_to "completed", health_path(camper.last_health_form.id) %>
           <% else %>
             </p> not completed </p>
           <% end %>
         </td>
         <td>
           <% if camper.last_travel_form %>
-            <p>completed</p>
+            <%= link_to "completed", travel_path(camper.last_travel_form.id) %>
           <% else %>
             </p> not completed </p>
           <% end %>
         </td>
         <td>
           <% if camper.last_legal_form %>
-            <p>completed</p>
+            <%= link_to "completed", legal_path(camper.last_legal_form.id) %>
           <% else %>
             </p> not completed </p>
           <% end %>

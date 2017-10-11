@@ -1,0 +1,40 @@
+<div class='camp-roster'>
+  <table class='table table-striped'>
+      <tr>
+        <th>
+          name
+        </th>
+        <th>
+          application
+        </th>
+        <th>
+          status
+        </th>
+      </tr>
+    <% @campers.each do |camper| %>
+      <tr>
+        <td>
+          <%= camper.name %>
+        </td>
+        <td>
+          <% if camper.last_completed_application %>
+            <p>completed</p>
+          <% else %>
+            </p>not completed</p>
+          <% end %>
+        </td>
+        <td>
+          <% if camper.accepted.nil? %>
+            <p> (no decision) </p>
+          <% else %>
+            <% if camper.accepted %>
+              </p>accepted</p>
+            <% else %>
+          </p>denied</p>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

@@ -19,6 +19,10 @@ class ApplicationsController < FormsController
     redirect_to root_path
   end
 
+  def show
+    @application = Application.find(params[:id])
+  end
+
   private
 
   def current_user_only

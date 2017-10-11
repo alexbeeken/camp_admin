@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171008184531) do
+ActiveRecord::Schema.define(version: 20171011212543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,50 @@ ActiveRecord::Schema.define(version: 20171008184531) do
     t.string "new_inspiration"
     t.string "new_other_skills"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.date "start_date"
+    t.date "end_date"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "field_responses", force: :cascade do |t|
+    t.string "data"
+    t.string "type"
+    t.integer "form_response_id"
+    t.integer "user_id"
+    t.integer "field_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fields", force: :cascade do |t|
+    t.string "label"
+    t.string "name"
+    t.string "type"
+    t.string "options"
+    t.integer "section_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "form_responses", force: :cascade do |t|
+    t.integer "form_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "forms", force: :cascade do |t|
+    t.string "title"
+    t.datetime "due_date"
+    t.integer "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,6 +94,13 @@ ActiveRecord::Schema.define(version: 20171008184531) do
     t.string "waiver_signature"
     t.boolean "behavior_agreement"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sections", force: :cascade do |t|
+    t.string "title"
+    t.integer "form_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -112,6 +163,7 @@ ActiveRecord::Schema.define(version: 20171008184531) do
     t.string "ice_1_phone"
     t.string "ice_2_name"
     t.string "ice_2_phone"
+    t.boolean "accepted"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -19,6 +19,10 @@ class TravelsController < FormsController
     redirect_to root_path
   end
 
+  def show
+    @travel = Travel.find(params[:id])
+  end
+
   private
 
   def current_user_only

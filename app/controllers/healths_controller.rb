@@ -19,6 +19,10 @@ class HealthsController < FormsController
     redirect_to root_path
   end
 
+  def show
+    @health = Health.find(params[:id])
+  end
+
   private
 
   def current_user_only
