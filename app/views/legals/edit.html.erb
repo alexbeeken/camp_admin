@@ -12,6 +12,7 @@
 <div class='container'>
   <div class='form'>
     <%= button_to 'oops take me back', root_path, class: 'btn btn-primary', method: 'get' %>
+    <%= render partial: 'layouts/form', locals: { form: @form } %>
     <%= form_for @legal, url: { action: 'update' } do |f| %>
       <%= render partial: 'form', locals: {f: f} %>
       <%= f.submit 'Update', class: 'btn btn-primary', required: true %>

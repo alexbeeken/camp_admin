@@ -1,6 +1,17 @@
 <div class='container dashboard'>
   <h3>Forms</h3>
 
+  <% current_user.forms.all.each do |form| %>
+    <div class='dashboard-item'>
+      <% if current_user.last_completed_application %>
+        <%= link_to "edit #{form.title}", edit_form_path(form) %>
+        <icon class='glyphicon glyphicon-ok'></icon>
+      <% else %>
+        <%= link_to "create new #{form.title}", new_form_path %>
+      <% end %>
+    </div>
+  <% end %>
+
   <div class='dashboard-item'>
     <% if current_user.last_completed_application %>
       <%= link_to "edit application", edit_application_path(current_user.last_completed_application) %>

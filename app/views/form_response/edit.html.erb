@@ -1,0 +1,8 @@
+<% @form.section.each |section| do %>
+  <% if section.title %>
+    <h3><%= section.title %></h3>
+  <% end %>
+  <% section.fields.each |field| do %>
+    <%= render partial: "form_fields/#{field.name}", locals: { field: field } %>
+  <% end %>
+<% end %>
