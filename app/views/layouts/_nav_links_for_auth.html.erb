@@ -8,6 +8,7 @@
 <% if user_signed_in? %>
   <% if current_user.try(:admin?) %>
     <li><%= link_to 'Applications', new_applications_path %></li>
+    <li><%= link_to 'Events', events_path %></li>
   <% else %>
     <li><%= link_to 'Edit account', edit_user_registration_path %></li>
   <% end %>

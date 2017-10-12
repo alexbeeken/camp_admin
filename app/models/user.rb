@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :healths, dependent: :destroy
   has_many :travels, dependent: :destroy
   has_many :legals, dependent: :destroy
+  has_many :events
 
   def last_completed_application
     return false unless applications.present?

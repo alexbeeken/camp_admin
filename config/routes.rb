@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :healths
   resources :travels
   resources :legals
+  resources :events
 
   get '/dashboard', to: 'visitors#dashboard'
   get '/new_applications', to: 'visitors#new_applications'
