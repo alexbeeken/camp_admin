@@ -1,41 +1,11 @@
 <div class='camp-roster'>
-  <table class='table table-striped'>
-      <tr>
-        <th>
-          name
-        </th>
-        <th>
-          returning
-        </th>
-        <th>
-          status
-        </th>
-      </tr>
-    <% @campers.each do |camper| %>
-      <% if camper.last_completed_application %>
-        <tr>
-          <td>
-            <%= camper.name %>
-          </td>
-          <td>
-            <%= camper.returning %>
-          </td>
-          <td>
-            <% if camper.accepted.nil? %>
-              <%= link_to "see application", application_path(camper.last_completed_application.id) %>
-            <% else %>
-              <% if camper.last_completed_application %>
-                <% if camper.accepted %>
-                  </p>accepted
-                <% else %>
-                  </p>denied
-                <% end %>
-                (<%= link_to 'undo', undo_user_path(camper.id) %>)</p>
-              <% end %>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    <% end %>
-  </table>
+  <h3> Returning </h3>
+  <% if @returning_campers %>
+    <%= render partial: 'applications', locals: {campers: @returning_campers} %>
+  <% end %>
+
+  <h3> New </h3>
+  <% if @new_campers %>
+    <%= render partial: 'applications', locals: {campers: @new_campers} %>
+  <% end %>
 </div>

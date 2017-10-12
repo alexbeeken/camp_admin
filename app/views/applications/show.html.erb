@@ -3,4 +3,5 @@
   <%= link_to "Accept", accept_user_path(@application.user.id), class: 'btn btn-primary' %>
   <%= link_to "Deny", deny_user_path(@application.user.id), class: 'btn btn-danger' %>
   <%= render partial: 'layouts/show', locals: {model: @application} %>
+  <%= render partial: 'layouts/show', locals: {model: @application.user} %>
 </div>

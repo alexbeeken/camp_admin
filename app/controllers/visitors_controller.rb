@@ -12,7 +12,8 @@ class VisitorsController < ApplicationController
   end
 
   def new_applications
-    @campers = User.where(role: 'camper')
+    @returning_campers = User.where(role: 'camper', returning: true)
+    @new_campers = User.where(role: 'camper', returning: false)
   end
 
   private

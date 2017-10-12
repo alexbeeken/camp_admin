@@ -1,0 +1,36 @@
+<table class='table table-striped'>
+  <tr>
+    <th>
+      name
+    </th>
+    <th>
+      status
+    </th>
+  </tr>
+  <% campers.each do |camper| %>
+    <% if camper.last_completed_application %>
+      <tr>
+        <td>
+          <%= link_to camper.name, user_path(camper.id) %>
+        </td>
+        <% if camper.accepted.nil? %>
+          <td>
+            <%= link_to "see application", application_path(camper.last_completed_application.id) %>
+          </td>
+        <% else %>
+          <% if camper.last_completed_application %>
+            <% if camper.accepted %>
+              <td class='success'>
+                <p>accepted
+            <% else %>
+              <td class='danger'>
+                <p>denied
+            <% end %>
+            (<%= link_to 'undo', undo_user_path(camper.id) %>)</p>
+            </td>
+          <% end %>
+        <% end %>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
