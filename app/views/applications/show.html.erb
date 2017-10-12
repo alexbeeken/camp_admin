@@ -1,7 +1,9 @@
 <div class='form'>
   <h3>Application for <%= @application.user.name %></h3>
-  <%= link_to "Accept", accept_user_path(@application.user.id), class: 'btn btn-primary' %>
-  <%= link_to "Deny", deny_user_path(@application.user.id), class: 'btn btn-danger' %>
+  <% if @application.user.accepted.nil? %>
+    <%= link_to "Accept", accept_user_path(@application.user.id), class: 'btn btn-primary' %>
+    <%= link_to "Deny", deny_user_path(@application.user.id), class: 'btn btn-danger' %>
+  <% end %>
   <%= render partial: 'layouts/show', locals: {model: @application} %>
   <%= render partial: 'layouts/show', locals: {model: @application.user} %>
 </div>

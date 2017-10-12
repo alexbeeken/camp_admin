@@ -28,6 +28,7 @@
         <% if camper.last_completed_application %>
           <td class='success'>
             <%= link_to "completed", application_path(camper.last_completed_application.id) %>
+            <icon class='glyphicon glyphicon-ok'></icon>
           </td>
         <% else %>
           <td class='danger'>
@@ -37,6 +38,7 @@
         <% if camper.last_health_form %>
           <td class='success'>
             <%= link_to "completed", health_path(camper.last_health_form.id) %>
+            <icon class='glyphicon glyphicon-ok'></icon>
           </td>
         <% else %>
           <td class='danger'>
@@ -46,6 +48,7 @@
         <% if camper.last_travel_form %>
           <td class='success'>
             <%= link_to "completed", travel_path(camper.last_travel_form.id) %>
+            <icon class='glyphicon glyphicon-ok'></icon>
           </td>
         <% else %>
           <td class='danger'>
@@ -55,6 +58,7 @@
         <% if camper.last_legal_form %>
           <td class='success'>
             <%= link_to "completed", legal_path(camper.last_legal_form.id) %>
+            <icon class='glyphicon glyphicon-ok'></icon>
           </td>
         <% else %>
           <td class='danger'>
@@ -64,6 +68,7 @@
           <% if !camper.profile_needs_updating %>
             <td class='success'>
               complete
+              <icon class='glyphicon glyphicon-ok'></icon>
             </td>
           <% else %>
             <td class='danger'>
