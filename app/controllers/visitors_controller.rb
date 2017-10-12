@@ -12,8 +12,9 @@ class VisitorsController < ApplicationController
   end
 
   def new_applications
-    @returning_campers = User.where(role: 'camper', returning: true)
-    @new_campers = User.where(role: 'camper', returning: false)
+    @returning_campers = User.joins(:applications).where(role: 'camper', returning: true, accepted: nil)
+    @new_campers = User.joins(:applications).where(role: 'camper', returning: (nil || false), accepted: nil)
+    @decided_campers = User.joins(:applications).where(role: 'camper', accepted: (false || true))
   end
 
   private

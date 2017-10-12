@@ -1,4 +1,4 @@
-<table class='table table-striped'>
+<table class='table table-striped table-hover'>
   <tr>
     <th>
       name
@@ -14,19 +14,19 @@
           <%= link_to camper.name, user_path(camper.id) %>
         </td>
         <% if camper.accepted.nil? %>
-          <td>
+          <td class='warning'>
             <%= link_to "see application", application_path(camper.last_completed_application.id) %>
           </td>
         <% else %>
           <% if camper.last_completed_application %>
             <% if camper.accepted %>
               <td class='success'>
-                <p>accepted
+                accepted
             <% else %>
               <td class='danger'>
-                <p>denied
+                denied
             <% end %>
-            (<%= link_to 'undo', undo_user_path(camper.id) %>)</p>
+            (<%= link_to 'undo', undo_user_path(camper.id) %>)
             </td>
           <% end %>
         <% end %>

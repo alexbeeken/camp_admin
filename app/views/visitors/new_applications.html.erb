@@ -1,11 +1,16 @@
 <div class='camp-roster'>
-  <h3> Returning </h3>
-  <% if @returning_campers %>
+  <% if @returning_campers.present? %>
+    <h3> Returning </h3>
     <%= render partial: 'applications', locals: {campers: @returning_campers} %>
   <% end %>
 
-  <h3> New </h3>
-  <% if @new_campers %>
+  <% if @new_campers.present? %>
+    <h3> New </h3>
     <%= render partial: 'applications', locals: {campers: @new_campers} %>
+  <% end %>
+
+  <% if @decided_campers.present? %>
+    <h3> Decided </h3>
+    <%= render partial: 'applications', locals: {campers: @decided_campers} %>
   <% end %>
 </div>
